@@ -5,10 +5,16 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs');
+const flash = require('connect-flash');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
-const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
 const usersRouter = require('./routes/users');
+const homeRouter = require('./routes/home');
+const profileRouter = require('./routes/profile');
+const questionsRouter = require('./routes/questions');
 
 const app = express();
 
@@ -22,6 +28,27 @@ mongoose.connect('mongodb://localhost/madTeacher', {
   reconnectTries: Number.MAX_VALUE
 });
 
+app.use(session({
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  }),
+  secret: 'some-string',
+  resave: true,
+  httpOnly: true,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000
+  }
+}));
+
+app.use(flash());
+
+app.use((req, res, next) => {
+  app.locals.currentUser = req.session.currentUser;
+  next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -32,8 +59,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', authRouter);
 app.use('/users', usersRouter);
+app.use('/home', homeRouter);
+app.use('/profile', profileRouter);
+app.use('/questions', questionsRouter);
 
 // NOTE: requires a views/not-found.ejs template
 app.use((req, res, next) => {

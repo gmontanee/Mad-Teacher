@@ -1,0 +1,12 @@
+<h1>Profile</h1>
+<p>{{currentUser.username}}</p>
+<p>{{currentUser.name}}</p>
+<p>{{currentUser.surname}}</p>
+<p>{{currentUser.birthday}}</p>
+<p>{{currentUser.numberOfAnswers}}</p>
+<p>{{currentUser.correctAnswers}}</p>
+<p>{{currentUser.wrongAnswers}}</p>
+<p>{{currentUser.puntuation}}</p>
+{{#each currentUser.answers}}
+<p>{{this}}</p>
+{{/each}}

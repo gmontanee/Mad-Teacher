@@ -1,0 +1,6 @@
+<h1>Home</h1>
+
+<p>{{currentUser.teacher}}</p>
+{{#unless currentUser.teacher}}
+  <button><a href="/questions/create">Add questions</a></button>
+{{/unless}}

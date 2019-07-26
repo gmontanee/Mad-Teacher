@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
+    <title>Mad Teacher</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    {{#if currentUser}}
+      <nav>
+        <ul>
+          <li><a href="/home">Home</a></li>
+        </ul>
+        <ul>
+          <a href="/profile">Profile</a>
+        </ul>
+         <form action="/logout" method="POST">
+                <button type="submit">Logout</button>
+          </form>
+      </nav>
+    {{/if}}
+    
     {{{body}}}
   </body>
 </html>
