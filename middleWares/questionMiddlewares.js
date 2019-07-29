@@ -3,7 +3,7 @@
 const findPositions = (question) => {
   const pos = [];
   for (let i = 0; i < question.length - 2; i++) {
-    if (question[i] == '$' && question[i + 1] == '$' && question[i + 2] == '$') {
+    if (question[i] === '$' && question[i + 1] === '$' && question[i + 2] === '$') {
       pos.push(i);
     }
   }
