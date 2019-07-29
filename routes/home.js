@@ -6,7 +6,6 @@ const { isNotLoggedIn } = require('../middleWares/authMiddlewares');
 
 /* GET users listing. */
 router.get('/', isNotLoggedIn, (req, res, next) => {
-  console.dir(req.session.currentUser);
   res.render('home');
 });
 

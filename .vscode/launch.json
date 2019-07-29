@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "nodemon",
-      "runtimeExecutable": "nodemon",
+      "runtimeExecutable": "/Users/IronHack/.nvm/versions/node/v12.6.0/bin/node",
       "program": "${workspaceFolder}/app.js",
       "restart": true,
       "console": "integratedTerminal",

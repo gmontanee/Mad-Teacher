@@ -7,6 +7,7 @@ const logger = require('morgan');
 const hbs = require('hbs');
 const flash = require('connect-flash');
 const mongoose = require('mongoose');
+mongoose.set('useCreateIndex', true);
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
