@@ -2,15 +2,14 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const ObjectId = Schema.Types.ObjectId;
 
-const userSchema = new Schema({
+const questionsSchema = new Schema({
   question: {
     type: String,
     required: true
   },
   parameters: {
-    type: [{ ObjectId }],
+    type: [Object],
     required: true
   },
   function: {
@@ -18,6 +17,6 @@ const userSchema = new Schema({
   }
 });
 
-const User = mongoose.model('User', userSchema);
+const Questions = mongoose.model('Questions', questionsSchema);
 
-module.exports = User;
+module.exports = Questions;

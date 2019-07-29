@@ -2,8 +2,8 @@
 
 const express = require('express');
 const bcrypt = require('bcrypt');
-const User = require('../models/User.js');
 const { isLoggedIn, isFormFilled } = require('../middleWares/authMiddlewares');
+const User = require('../models/User.js');
 const mongoose = require('mongoose');
 
 const saltRounds = 10;
