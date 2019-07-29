@@ -1,13 +1,21 @@
-<form action="/signup" method="POST">
-  <label for="username">Username</label>
-  <input type="text" name="username" id="username" placeholder="username" required value="">
-  <label for="password">Password</label>
-  <input type="password" name="password" id="password" placeholder="password" required>
-  <label for="Name">Name</label>
-  <input type="text" name="name" id="Name" placeholder="Name" required>
-  <label for="Surname">Surname</label>
-  <input type="text" name="surname" id="Surname" placeholder="Surname" required>
-  <label for="Birthday">Birthday</label>
-  <input type="text" name="birthday" id="Birthday" placeholder="Birthday" required>
-  <button type="submit">Sign Up</button>
-</form>
+<div class="main-signup">
+  <div class="container-signup">
+    <form action="/signup" method="POST" class="appointment-form-signup">
+      <h2 class="header-signup">Mad Teacher - Do you want to join?</h2>
+      <div class="form-signup">
+        {{!-- <label for="username">Username</label> --}}
+        <input class="input-signup"  type="text" name="username" id="username" placeholder="Username" required value="">
+        {{!-- <label for="password">Password</label> --}}
+        <input class="input-signup" type="password" name="password" id="password" placeholder="Password" required>
+        {{!-- <label for="Name">Name</label> --}}
+        <input class="input-signup" type="text" name="name" id="Name" placeholder="Name" required>
+        {{!-- <label for="Surname">Surname</label> --}}
+        <input class="input-signup" type="text" name="surname" id="Surname" placeholder="Surname" required>
+        <label for="Birthday">Birthday</label>
+        <input class="input-signup" type="date" name="birthday" id="Birthday" placeholder="Birthday" required>
+      </div>
+      <button class="button-signup" type="submit">Sign Up</button>
+    </form>
+
+  </div>
+</div>
