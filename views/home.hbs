@@ -1,6 +1,11 @@
-<h1>Home</h1>
 
-<p>{{currentUser.teacher}}</p>
-{{#unless currentUser.teacher}}
-  <button><a href="/questions/create">Add questions</a></button>
-{{/unless}}
+<h1 class="main-header-home">Home</h1>
+
+<div class="main-home">
+  <p class="user-home">{{currentUser.teacher}}</p>
+  <div class="container-home">
+    {{#unless currentUser.teacher}}
+      <button><a href="/questions/create">Add questions</a></button>
+    {{/unless}}
+  </div>
+</div>
