@@ -11,14 +11,25 @@ const Question = require('../models/Questions');
 router.get('/', isNotLoggedIn, (req, res, next) => {
   const user = req.session.currentUser;
   User.findById(user._id).populate('questionsMade')
-    .then(async (userData) => {
-      // req.session.currentUser = userData;
+    .then((userData) => {
+      req.session.currentUser = userData;
+    }).catch(err => {
+      console.log(err);
+    });
+  Question.find()
+    .then((questions) => {
+      const arrOfQuestions = [];
+      for (let i = questions.length - 1; i > 0 && i >= questions.length - 20; i--) {
+        const question = arrayOfAnswers(questions[i]);
+        console.log(question);
+        arrOfQuestions.push(question);
+      }
       // const { id } = req.params;
       // const newQuestion = await Question.findById(id);
       // const questionObject = arrayOfAnswers(newQuestion, id);
       // res.render('home', questionObject);
-      console.log(Question.question);
-      res.render('home');
+      // console.log(questions);
+      res.render('home', arrOfQuestions);
     }).catch(err => {
       console.log(err);
     });

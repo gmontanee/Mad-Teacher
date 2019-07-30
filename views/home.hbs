@@ -12,8 +12,13 @@
       <button><a href="/questions/create">Add questions</a></button>
     {{/unless}}
     <p>{{question}}</p>
-    {{#each answers}}
-      <p>{{solution}}</p>
+    {{#each this}}
+      <p>{{question}}</p>
+      <ul>
+      {{#each answers}}
+        <li><button>O</button><p>{{solution}}</p></li>
+      {{/each}}
+      </ul>
     {{/each}}
   </div>
 </div>
