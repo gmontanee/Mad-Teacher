@@ -48,14 +48,7 @@ display-flex {
 .container-signup {
   width: calc( 100% - 30px);
   max-width: 100%;
-  max-height: 100%;
   background: #fff;
-  margin-left: 165px;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
 }
 
 .appointment-form-signup {
@@ -68,7 +61,7 @@ display-flex {
   font-weight: bold;
   color: #222;
   font-family: 'Geostar', cursive;
-  font-size: 20px;
+  font-size: 66px;
   margin-bottom: 30px;
 }
 
@@ -85,10 +78,13 @@ display-flex {
   padding: 5px 0;
   color: #222;
   margin-bottom: 31px;
-  font-family: 'Darker Grotesque', sans-serif;; }
-  input:focus, select:focus {
-    color: #222;
-    border-bottom: 2px solid #4966b1
+  font-family: 'Roboto Slab';
+  outline: none;
+  font-size: 45px;
+}
+
+.birthday-signup {
+  font-size: 40px;
 }
 
 .button-signup {
@@ -96,7 +92,7 @@ display-flex {
   background: #4966b1;
   color: #fff;
   padding: 16px 17px;
-  font-size: 13px;
+  font-size: 35px;
   border: none;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -113,18 +109,156 @@ display-flex {
     background: #3a518d;
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .container-signup {
-    margin: 0 auto; } }
+    margin: 0 auto; } } */
 
 /* @media screen and (max-width: 768px) {
   .container-signup {
     width: calc( 100% - 30px);
     max-width: 100%; } } */
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .appointment-form-signup {
-    padding: 50px 30px 70px 30px; } }
+    padding: 50px 30px 70px 30px; } } */
 
+
+
+/* --- login --- */
+.main-login {
+  padding: 60px 0;
+  position: relative;
+}
+
+.container-login {
+  width: calc( 100% - 30px);
+  max-width: 100%;
+  background: #fff;
+}
+
+.appointment-form-login {
+  padding: 50px 30px 70px 30px; }
+
+.main-header-login {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #222;
+  font-family: 'Geostar', cursive;
+  font-size: 66px;
+  margin-bottom: 30px;
+}
+
+.sub-header-login {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #222;
+  font-family: Arial;
+  font-size: 66px;
+  margin-bottom: 30px;
+}
+
+
+.form-login {
+  display: block;
+  margin-top: 0em;
+}
+
+.input-login {
+  width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 2px solid #ebebeb;
+  padding: 5px 0;
+  color: #222;
+  margin-bottom: 31px;
+  font-family: 'Roboto Slab';
+  outline: none;
+  font-size: 45px;
+}
+
+.button-login {
+  width: auto;
+  background: #4966b1;
+  color: #fff;
+  padding: 16px 17px;
+  font-size: 35px;
+  border: none;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
+  .submit:hover {
+    background: #3a518d;
+}
+
+.buttons-login {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button-signup-login {
+  width: auto;
+  background: grey;
+  color: #fff;
+  padding: 16px 17px;
+  font-size: 35px;
+  border: none;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
+  .submit:hover {
+    background: #3a518d;
+}
+
+
+/* --- home --- */
+
+.main-header-home {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #222;
+  font-family: 'Geostar', cursive;
+  font-size: 66px;
+  margin-bottom: 30px;
+}
+
+.main-home {
+  padding: 60px 0;
+  position: relative;
+}
+
+.user-home {
+
+}
+
+.container-home {
+  width: calc( 100% - 30px);
+  max-width: 100%;
+  background: #fff;
+}
 
 /* ---- layout ---- */
 
@@ -132,7 +266,6 @@ body {
   font-size: 13px;
   line-height: 1.8;
   color: black;
-  background-color: green;
   /* background-image: image-set("../../images/alphabet-close-up-communication-256417.jpg"); */
   /* background-image: url("../../images/alphabet-close-up-communication-256417.jpg"); */
   background-repeat: no-repeat;
@@ -146,6 +279,8 @@ body {
   font-family: 'Roboto Slab';
   margin: 0px;
 }
+
+
 
 #site-header {
   padding: 30px 0;
