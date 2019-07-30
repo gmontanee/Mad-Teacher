@@ -9,7 +9,7 @@
 
   <div class="container-home">
     {{#unless currentUser.teacher}}
-      <button><a href="/questions/create">Add questions</a></button>
+      <button class="button-add-question-home"><a href="/questions/create">Add questions</a></button>
     {{/unless}}
     <p>{{question}}</p>
     {{#each this}}
