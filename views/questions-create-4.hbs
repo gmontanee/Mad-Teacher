@@ -2,5 +2,10 @@
 
 
 <p>{{question}}</p>
+{{#each answers}}
+  <p>{{solution}}</p>
+{{/each}}
 
-<button><a href="/home">Home</a></button>
+<form action='/questions/create/4/{{_id}}' method="post">
+  <button type="submit">Next</button>
+</form>

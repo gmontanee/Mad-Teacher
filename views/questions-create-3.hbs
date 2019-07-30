@@ -2,7 +2,11 @@
 <p>{{this.question}}</p>
 
 <form action='/questions/create/3/{{_id}}' method="post">
-  <label for="function">function</label>
-  <input type="text" name="function" id="function" placeholder="Enter your function" value="" required>
+  <label for="correct-func">Correct answer</label>
+  <input type="text" name="cFunc" id="cFunc" placeholder="Enter your function" value="" required>
+  <label for="wrong-functions">Wrong answers</label>
+  <input type="text" name="wFunc1" id="wFunc1" placeholder="Enter your function" value="" required>
+  <input type="text" name="wFunc2" id="wFunc2" placeholder="Enter your function" value="" required>
+  <input type="text" name="wFunc3" id="wFunc3" placeholder="Enter your function" value="" required>
   <button type="submit">Next</button>
 </form>

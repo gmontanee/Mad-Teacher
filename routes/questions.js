@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const { isNotLoggedIn } = require('../middleWares/authMiddlewares');
-const { findPositions, replaceVar, randomNumber } = require('../middleWares/questionMiddlewares');
+const { findPositions, replaceVar, randomNumber, arrayOfAnswers } = require('../middleWares/questionMiddlewares');
 const Question = require('../models/Questions');
+const User = require('../models/User.js');
 
 /* GET users listing. */
 router.get('/create', isNotLoggedIn, (req, res, next) => {
@@ -49,7 +50,8 @@ router.get('/create/3/:id', isNotLoggedIn, async (req, res, next) => {
 router.post('/create/3/:id', async (req, res, next) => {
   const { id } = req.params;
   const newQuestion = await Question.findById(id);
-  newQuestion.function = req.body.function;
+  const funcObj = [`${req.body.cFunc}`, `${req.body.wFunc1}`, `${req.body.wFunc2}`, `${req.body.wFunc3}`];
+  newQuestion.function = funcObj;
   await Question.findByIdAndUpdate(newQuestion._id, newQuestion);
   res.redirect(`/questions/create/4/${newQuestion._id}`);
 });
@@ -57,28 +59,16 @@ router.post('/create/3/:id', async (req, res, next) => {
 router.get('/create/4/:id', isNotLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   const newQuestion = await Question.findById(id);
-  let question = newQuestion.question;
-  console.log(question);
-  const arrayOfPositions = [];
-  const arrayOfValues = [];
-  for (let i = 0; i < newQuestion.parameters.length; i++) {
-    arrayOfPositions.push(newQuestion.parameters[i].position);
-    arrayOfValues.push(randomNumber(newQuestion.parameters[i].max, newQuestion.parameters[i].min, newQuestion.parameters[i].precission));
-  }
-  question = replaceVar(question, arrayOfPositions, arrayOfValues);
-  const questionObject = {
-    question,
-    variables: arrayOfValues
-  };
-
+  const questionObject = arrayOfAnswers(newQuestion, id);
+  console.log(questionObject);
   res.render('questions-create-4', questionObject);
 });
 
 router.post('/create/4/:id', async (req, res, next) => {
   const { id } = req.params;
   const newQuestion = await Question.findById(id);
-  newQuestion.function = req.body.function;
-  console.log(newQuestion);
+  const userId = req.session.currentUser._id;
+  await User.findByIdAndUpdate(userId, { $push: { questionsMade: newQuestion } }, { new: true });
   res.redirect('/home');
 });
 

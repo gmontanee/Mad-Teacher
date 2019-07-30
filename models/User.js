@@ -46,9 +46,7 @@ const userSchema = new Schema({
     type: Boolean,
     default: false
   },
-  questionsMade: {
-    type: [{ ObjectId }]
-  }
+  questionsMade: [{ type: ObjectId, ref: 'Questions' }]
 });
 
 const User = mongoose.model('User', userSchema);

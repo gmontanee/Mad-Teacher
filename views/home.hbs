@@ -2,10 +2,18 @@
 <h1 class="main-header-home">Home</h1>
 
 <div class="main-home">
-  <p class="user-home">{{currentUser.teacher}}</p>
+  <p class="user-home">{{currentUser.username}}</p>
+  {{#unless currentUser.teacher}}
+    <p class="user-home">Teacher</p>
+  {{/unless}}
+
   <div class="container-home">
     {{#unless currentUser.teacher}}
       <button><a href="/questions/create">Add questions</a></button>
     {{/unless}}
+    <p>{{question}}</p>
+    {{#each answers}}
+      <p>{{solution}}</p>
+    {{/each}}
   </div>
 </div>
