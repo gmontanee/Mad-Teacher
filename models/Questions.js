@@ -13,7 +13,7 @@ const questionSchema = new Schema({
     required: true
   },
   function: {
-    type: String
+    type: [String]
   }
 });
 
