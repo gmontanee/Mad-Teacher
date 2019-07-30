@@ -49,19 +49,26 @@ display-flex {
   width: calc( 100% - 30px);
   max-width: 100%;
   background: #fff;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .appointment-form-signup {
-  padding: 50px 30px 70px 30px; }
+  padding: 50px 30px 70px 30px; 
+
+}
 
 .header-signup {
   line-height: 1.8;
   margin: 0;
   padding: 0;
   font-weight: bold;
-  color: #222;
-  font-family: 'Geostar', cursive;
-  font-size: 66px;
+  color: #271DEB;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 86px;
   margin-bottom: 30px;
 }
 
@@ -86,10 +93,17 @@ display-flex {
 .birthday-signup {
   font-size: 40px;
 }
+.buttons-signup {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
 .button-signup {
   width: auto;
-  background: #4966b1;
+  background: #6694FF;
   color: #fff;
   padding: 16px 17px;
   font-size: 35px;
@@ -107,6 +121,33 @@ display-flex {
   -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
   .submit:hover {
     background: #3a518d;
+}
+
+.button-login-signup {
+  list-style-type: none;
+  width: auto;
+  background: #FFCA4D;
+  color: #fff;
+  padding: 16px 17px;
+  font-size: 35px;
+  border: none;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
+  .submit:hover {
+    background: #3a518d;
+}
+
+.text-login-signup {
+  text-decoration: none;
 }
 
 /* @media screen and (max-width: 1024px) {
@@ -127,12 +168,20 @@ display-flex {
 .main-login {
   padding: 60px 0;
   position: relative;
+  width: 100%;
 }
 
 .container-login {
   width: calc( 100% - 30px);
   max-width: 100%;
-  background: #fff;
+  background:rgba(255,255,255,0.7);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 30px;
+  margin: 0 auto;
 }
 
 .appointment-form-login {
@@ -143,9 +192,9 @@ display-flex {
   margin: 0;
   padding: 0;
   font-weight: bold;
-  color: #222;
-  font-family: 'Geostar', cursive;
-  font-size: 66px;
+  color: #FF4100;
+  font-family: 'Indie Flower', cursive;
+  font-size: 146px;
   margin-bottom: 30px;
 }
 
@@ -154,7 +203,7 @@ display-flex {
   margin: 0;
   padding: 0;
   font-weight: bold;
-  color: #222;
+  color: #271DEB;
   font-family: Arial;
   font-size: 66px;
   margin-bottom: 30px;
@@ -211,7 +260,7 @@ display-flex {
 
 .button-signup-login {
   width: auto;
-  background: grey;
+  background: #FFCA4D;
   color: #fff;
   padding: 16px 17px;
   font-size: 35px;
@@ -229,6 +278,10 @@ display-flex {
   -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
   .submit:hover {
     background: #3a518d;
+}
+
+.text-signup-login {
+  text-decoration: none;
 }
 
 
@@ -260,6 +313,22 @@ display-flex {
   background: #fff;
 }
 
+.button-add-question-home {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight:300;
+  color: #FFFFFF;
+  background-color: #4eb5f1;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+
 /* ---- layout ---- */
 
 body {
@@ -267,7 +336,7 @@ body {
   line-height: 1.8;
   color: black;
   /* background-image: image-set("../../images/alphabet-close-up-communication-256417.jpg"); */
-  /* background-image: url("../../images/alphabet-close-up-communication-256417.jpg"); */
+  background-image: url("../images/alphabet-close-up-communication-256417.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;
@@ -278,6 +347,10 @@ body {
   font-weight: 400;
   font-family: 'Roboto Slab';
   margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 
@@ -314,6 +387,258 @@ body {
   }
 }
 
+
+/* --- questions create 1 --- */
+.main-create-question-1 {
+  padding: 60px 0;
+  position: relative;
+}
+
+.container-create-question-1 {
+  width: calc( 100% - 30px);
+  max-width: 100%;
+  background:rgba(255,255,255,0.7);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.appointment-form-create-question-1 {
+  padding: 0px 30px 70px 30px; 
+}
+
+.headers-create-question-1 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 160px;
+}
+
+
+.header-create-question-1 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #244FB3;
+  font-family: 'Indie Flower', cursive;
+  font-size: 74px;
+  margin-bottom: -32px;
+}
+
+.instructions-create-question-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100;
+  justify-content: center;
+}
+
+.instructions-header {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #FFCA4D;
+  font-family: 'Indie Flower', cursive;
+  font-size: 97px;
+  margin-bottom: -7px;
+  text-align: center;
+}
+
+.instructions-intro {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.instructions-list {
+  list-style: none;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+}
+
+
+.instructions-example {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.title-create-question-1 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #1540F0;
+  font-family: 'Indie Flower', cursive;
+  font-size: 64px;
+  margin-bottom: -45px;
+}
+
+.instructions-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.instructions-inputs-input {
+  width: 100%;
+  display: block;
+  border: 2px solid #EB951C;
+  /* border-bottom: 2px solid #ebebeb; */
+  padding: 5px 0;
+  color: #222;
+  margin-bottom: 31px;
+  font-family: 'Roboto Slab';
+  outline: none;
+  font-size: 45px;
+}
+
+.instructions-inputs-button {
+  width: auto;
+  background: #FF4C13;
+  color: #fff;
+  padding: 16px 17px;
+  font-size: 35px;
+  border: none;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
+  .submit:hover {
+    background: #3a518d;
+}
+
+
+/* --- questions create 2 --- */
+.main-create-question-2 {
+  padding: 60px 0;
+  position: relative;
+}
+
+.container-create-question-2 {
+  width: calc( 100% - 30px);
+  max-width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.headers-create-question-2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 160px;
+}
+
+.title-create-question-2 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #1540F0;
+  font-family: 'Indie Flower', cursive;
+  font-size: 64px;
+  margin-bottom: -45px;
+}
+
+.header-create-question-2 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #244FB3;
+  font-family: 'Indie Flower', cursive;
+  font-size: 74px;
+  margin-bottom: -32px;
+}
+
+.appointment-form-create-question-2 {
+  padding: 0px 30px 70px 30px; 
+}
+
+.question-2-inputs{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+
+.input-question-2 {
+  width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 2px solid #ebebeb;
+  padding: 5px 0;
+  color: #222;
+  margin-bottom: 31px;
+  font-family: 'Roboto Slab';
+  outline: none;
+  font-size: 45px;
+}
+
+.question-2-inputs-button {
+  width: auto;
+  background: #FF4C13;
+  color: #fff;
+  padding: 16px 17px;
+  font-size: 35px;
+  border: none;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
+  .submit:hover {
+    background: #3a518d;
+}
+
+/* --- questions create 3 --- */
+/* --- questions create 4 --- */
 
 
 

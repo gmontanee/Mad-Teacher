@@ -1,18 +1,29 @@
-<h1>Questions 2</h1>
-<p>{{this.question}}</p>
-
-
-<form action='/questions/create/2/{{_id}}' method="post">
-  {{#each this.parameters}}
-  <div class="Input-2-container">
-    <h3>{{position}}</h3>
-    <label for="max">Max</label>
-    <input type="text" name="max" id="max" placeholder="Enter max value" value="" required>
-    <label for="min">Min</label>
-    <input type="text" name="min" id="min" placeholder="Enter min value" value="" required>
-    <label for="precission">Precission</label>
-    <input type="text" name="precission" id="precission" placeholder="Enter your precission" value="" required>
-  {{/each}}
+<div class="main-create-question-2">
+  <div class="container-create-question-2">
+    <div class="headers-create-question-2">
+      <h3 class="title-create-question-2">Step 2</h3>
+      <h2 class="header-create-question-2">Set limits</h2>
+    </div>
+    <div class="bring-question">
+      <p class="par-bring-question">Your question is:</p>
+      <p class="par-bring-question">{{this.question}}</p>
+    </div>
+    <div class="container-question-2-inputs-">
+      <form action='/questions/create/2/{{_id}}' method="post" class="appointment-form-create-question-2">
+        {{#each this.parameters}}
+        <div class="question-2-inputs">
+          <p class="par-question-2-inputs">Your variable in position: {{position}}</p>
+          {{!-- <label for="max">Max</label> --}}
+          <input class="input-question-2" type="text" name="max" id="max" placeholder="Enter max value" value="" required>
+          {{!-- <label for="min">Min</label> --}}
+          <input class="input-question-2" type="text" name="min" id="min" placeholder="Enter min value" value="" required>
+          {{!-- <label for="precission">Precission</label> --}}
+          <input class="input-question-2" type="text" name="precission" id="precission" placeholder="Enter your precission" value="" required>
+        {{/each}}
+        </div>
+        <button class="question-2-inputs-button" type="submit">Next</button>
+      </form>
+    </div>
   </div>
-  <button type="submit">Next</button>
-</form>
+</div>
+

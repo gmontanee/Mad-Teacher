@@ -1,7 +1,27 @@
-<h1>Questions</h1>
-
-<form action="/questions/create" method="post">
-  <label for="question">Question</label>
-  <input type="text" name="question" id="question" placeholder="Enter your question" value="">
-  <button type="submit">Next</button>
-</form>
+<div class="main-create-question-1">
+  <div class="container-create-question-1">
+    <form action="/questions/create" method="post" class="appointment-form-create-question-1">
+      <div class="headers-create-question-1">
+          {{!-- <label for="question">Question</label> --}}
+        <h3 class="title-create-question-1">Step 1</h3>
+        <h2 class="header-create-question-1">Enter your question</h2>
+      </div>
+      <div class="instructions-create-question-1">
+        <h3 class="instructions-header">Instructions</h3>
+        <p class="instructions-intro">In order to create your question, please consider the following:</p>
+        <ul class="instructions-list">
+          <li class="instructions-element-list">Enter a coherent question</li>
+          <li class="instructions-element-list">Enter minimum 2 variables</li>
+          <li class="instructions-element-list">To entry a varible, you need to input this "$$$"</li>
+        </ul>
+        <p class="instructions-example"> Example: A semi-annual pay floating-rate note pays a coupon of Libor + $$$ bps, 
+          with exactly three years to maturity. If the required margin is $$$ bps and Libor is 
+          quoted today at $$$% then the value of the bond is closest to:</p>
+      </div>
+      <div class="instructions-inputs">
+        <textarea class="instructions-inputs-input" type="text"  name="question" id="question" cols="30" rows="10" placeholder="Enter your question here..."></textarea>
+        <button class="instructions-inputs-button" type="submit">Next</button>
+      </div>
+    </form>
+  </div>
+</div>
