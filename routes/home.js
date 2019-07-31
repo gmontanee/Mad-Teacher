@@ -59,14 +59,9 @@ router.post('/:id', isNotLoggedIn, async (req, res, next) => {
       }
     });
   }
-<<<<<<< HEAD
   const userId = req.session.currentUser._id;
   await User.findByIdAndUpdate(userId, req.session.currentUser);
   req.session.currentUser.answers.push(question);
-=======
-  // const questionsArray = req.session.currentUser.generatedQuestions;
-  // console.log(req.body.solution);
->>>>>>> d5b48e91361f9d4dfa6c3a88b78f6bbffb76f605
   res.redirect('/home');
 });
 
