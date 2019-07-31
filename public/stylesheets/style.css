@@ -43,17 +43,22 @@ display-flex {
 .main-signup {
   padding: 60px 0;
   position: relative;
+  background-image: url("../images/gettyimages-520045027.jpg");
+  height: 100vh;
 }
 
 .container-signup {
   width: calc( 100% - 30px);
   max-width: 100%;
-  background: #fff;
+  background:rgba(255,255,255,0.7);
   display: flex;
   flex-direction: row;
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
+  border-radius: 30px;
+  margin: 0 auto;
+
 }
 
 .appointment-form-signup {
@@ -68,7 +73,7 @@ display-flex {
   font-weight: bold;
   color: #271DEB;
   font-family: 'Tajawal', sans-serif;
-  font-size: 86px;
+  font-size: 30px;
   margin-bottom: 30px;
 }
 
@@ -87,11 +92,11 @@ display-flex {
   margin-bottom: 31px;
   font-family: 'Roboto Slab';
   outline: none;
-  font-size: 45px;
+  font-size: 20px;
 }
 
 .birthday-signup {
-  font-size: 40px;
+  font-size: 17px;
 }
 .buttons-signup {
   display: flex;
@@ -106,7 +111,7 @@ display-flex {
   background: #6694FF;
   color: #fff;
   padding: 16px 17px;
-  font-size: 35px;
+  font-size: 17px;
   border: none;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -129,7 +134,7 @@ display-flex {
   background: #FFCA4D;
   color: #fff;
   padding: 16px 17px;
-  font-size: 35px;
+  font-size: 17px;
   border: none;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -169,6 +174,8 @@ display-flex {
   padding: 60px 0;
   position: relative;
   width: 100%;
+  background-image: url("../images/gettyimages-520045027.jpg");
+  height: 100vh;
 }
 
 .container-login {
@@ -379,7 +386,7 @@ body {
   line-height: 1.8;
   color: black;
   /* background-image: image-set("../../images/alphabet-close-up-communication-256417.jpg"); */
-  background-image: url("../images/alphabet-close-up-communication-256417.jpg");
+  /* background-image: url("../images/alphabet-close-up-communication-256417.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;
