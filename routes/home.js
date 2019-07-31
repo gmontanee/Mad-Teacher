@@ -47,7 +47,6 @@ router.post('/:id', isNotLoggedIn, async (req, res, next) => {
   }
   // const questionsArray = req.session.currentUser.generatedQuestions;
   // console.log(req.body.solution);
-
   res.redirect('/home');
 });
 

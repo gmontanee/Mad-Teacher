@@ -7,7 +7,9 @@
     <div class="bring-question">
       <p class="par-bring-question">Your question and parameters are:</p>
       <p>{{this.question}}</p>
-      <p>{{this.parameters}}</p>
+      {{#each parameters}}
+      <p>{{this.position}}</p>
+      {{/each}}
     </div>
     <div class="container-question-3-inputs">
       <form action='/questions/create/3/{{_id}}' method="post" class="appointment-form-create-question-3">
