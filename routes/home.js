@@ -38,15 +38,35 @@ router.get('/', isNotLoggedIn, (req, res, next) => {
 router.post('/:id', isNotLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   const question = req.session.currentUser.generatedQuestions.find(elem => elem._id == id);
-  // console.log(question);
-  // console.log(question.answers.find(elem => elem.correct == true).solution);
+  console.log(question.answers);
+  question.answers.find(elem => elem.solution == req.body.solution).answered = true;
   if (question.answers.find(elem => elem.correct == true).solution == req.body.solution) {
-    console.log('correct');
+    question.answer = true;
+    req.session.currentUser.correctAnswers++;
+    req.session.currentUser.puntuation += 100;
+    req.session.currentUser.generatedQuestions.map(elem => {
+      if (elem._id == question._id) {
+        elem = question;
+      }
+    });
   } else {
-    console.log('wrong');
+    question.answer = false;
+    req.session.currentUser.wrongAnswers--;
+    req.session.currentUser.generatedQuestions.map(elem => {
+      if (elem._id == question._id) {
+        console.log(Question.findById(elem._id).schema.obj);
+        elem = arrayOfAnswers(Question.findById(elem._id).schema.obj);
+      }
+    });
   }
+<<<<<<< HEAD
+  const userId = req.session.currentUser._id;
+  await User.findByIdAndUpdate(userId, req.session.currentUser);
+  req.session.currentUser.answers.push(question);
+=======
   // const questionsArray = req.session.currentUser.generatedQuestions;
   // console.log(req.body.solution);
+>>>>>>> d5b48e91361f9d4dfa6c3a88b78f6bbffb76f605
   res.redirect('/home');
 });
 
