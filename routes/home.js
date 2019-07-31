@@ -9,6 +9,7 @@ const Question = require('../models/Questions');
 
 /* GET users listing. */
 router.get('/', isNotLoggedIn, (req, res, next) => {
+  console.log(req.session.currentUser);
   const user = req.session.currentUser;
   User.findById(user._id).populate('questionsMade')
     .then((userData) => {
@@ -21,7 +22,7 @@ router.get('/', isNotLoggedIn, (req, res, next) => {
       const arrOfQuestions = [];
       for (let i = questions.length - 1; i > 0 && i >= questions.length - 20; i--) {
         const question = arrayOfAnswers(questions[i]);
-        console.log(question);
+
         arrOfQuestions.push(question);
       }
       // const { id } = req.params;

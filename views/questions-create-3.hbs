@@ -1,12 +1,25 @@
-<h1>Questions 3</h1>
-<p>{{this.question}}</p>
+<div class="main-create-question-3">
+  <div class="container-create-question-3">
+    <div>
+      <h2 class="title-create-question-3">Step 3</h2>
+      <h3 class="header-create-question-3">Set calculation</h3>
+    </div>
+    <div class="bring-question">
+      <p class="par-bring-question">Your question and parameters are:</p>
+      <p>{{this.question}}</p>
+      <p>{{this.parameters}}</p>
+    </div>
+    <div class="container-question-3-inputs">
+      <form action='/questions/create/3/{{_id}}' method="post" class="appointment-form-create-question-3">
+        <label class="input-title-question-3-right" for="correct-func">Correct answer</label>
+        <input class="input-question-3-right" type="text" name="cFunc" id="cFunc" placeholder="Enter your function" value="" required>
+        <label class="input-title-question-3-wrong" for="wrong-functions">Wrong answers</label>
+        <input class="input-question-3-wrong" type="text" name="wFunc1" id="wFunc1" placeholder="Enter your function" value="" required>
+        <input class="input-question-3-wrong" type="text" name="wFunc2" id="wFunc2" placeholder="Enter your function" value="" required>
+        <input class="input-question-3-wrong" type="text" name="wFunc3" id="wFunc3" placeholder="Enter your function" value="" required>
+        <button class="question-3-inputs-button" type="submit">Next</button>
+      </form>
+    </div>
+  </div>
+</div>
 
-<form action='/questions/create/3/{{_id}}' method="post">
-  <label for="correct-func">Correct answer</label>
-  <input type="text" name="cFunc" id="cFunc" placeholder="Enter your function" value="" required>
-  <label for="wrong-functions">Wrong answers</label>
-  <input type="text" name="wFunc1" id="wFunc1" placeholder="Enter your function" value="" required>
-  <input type="text" name="wFunc2" id="wFunc2" placeholder="Enter your function" value="" required>
-  <input type="text" name="wFunc3" id="wFunc3" placeholder="Enter your function" value="" required>
-  <button type="submit">Next</button>
-</form>

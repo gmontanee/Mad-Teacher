@@ -50,6 +50,7 @@ const arrayOfAnswers = (newQuestion, id) => {
     } else {
       answerObj.correct = false;
     }
+    console.log(arrayOfValues[0]);
     answerObj.solution = expr.evaluate({
       a: arrayOfValues[0],
       b: arrayOfValues[1],
@@ -60,6 +61,7 @@ const arrayOfAnswers = (newQuestion, id) => {
       g: arrayOfValues[6],
       i: arrayOfValues[7]
     });
+    console.log(answerObj.solution);
     answers.push(answerObj);
   }
   const questionObject = {
