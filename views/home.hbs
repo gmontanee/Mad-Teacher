@@ -12,8 +12,20 @@
       <button class="button-add-question-home"><a href="/questions/create">Add questions</a></button>
     {{/unless}}
 
-    <p>{{question}}</p>
+
     {{#each this}}
+    {{#if answer}}
+      <p>{{question}}</p>
+      {{#each answers}}
+          {{#if correct}}
+          <h3>{{solution}}</h3>
+          {{/if}}
+          {{#unless correct}}
+          <p>{{solution}}</p>
+          {{/unless}}
+      {{/each}}
+    {{/if}}
+    {{#unless answer}}
     <form action="/home/{{_id}}" method="POST">
       <p>{{question}}</p>
       <div>
@@ -26,6 +38,7 @@
         <button type="submit">Submit</button>
       </div>
     </form>
+    {{/unless}}
   {{/each}}
   </div>
 </div>

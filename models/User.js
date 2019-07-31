@@ -43,7 +43,7 @@ const userSchema = new Schema({
     type: [Object]
   },
   answers: {
-    type: Array
+    type: [Object]
   },
   teacher: {
     type: Boolean,

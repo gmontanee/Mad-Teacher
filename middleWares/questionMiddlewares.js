@@ -65,7 +65,8 @@ const arrayOfAnswers = (newQuestion, id) => {
   const questionObject = {
     question,
     answers,
-    _id: newQuestion._id
+    _id: newQuestion._id,
+    answer: false
   };
 
   let currentIndex = questionObject.answers.length;
