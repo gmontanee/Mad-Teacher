@@ -11,14 +11,21 @@
     {{#unless currentUser.teacher}}
       <button class="button-add-question-home"><a href="/questions/create">Add questions</a></button>
     {{/unless}}
+
     <p>{{question}}</p>
     {{#each this}}
+    <form action="/home/{{_id}}" method="POST">
       <p>{{question}}</p>
-      <ul>
-      {{#each answers}}
-        <li><button>O</button><p>{{solution}}</p></li>
-      {{/each}}
-      </ul>
-    {{/each}}
+      <div>
+        {{#each answers}}
+          <label for="{{solution}}">{{solution}}</label>
+          <input type="radio" id="{{solution}}" name="solution" value='{{solution}}'>
+        {{/each}}
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  {{/each}}
   </div>
 </div>
