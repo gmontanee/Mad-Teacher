@@ -855,7 +855,97 @@ body {
 
 /* --- questions create 4 --- */
 
+.main-create-question-4 {
+  padding: 0 0;
+  position: relative;
+}
 
+.container-create-question-4 {
+  width: calc( 100% - 30px);
+  max-width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headers-create-question-4 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 12px;
+}
+
+.title-create-question-4 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #1540F0;
+  font-family: 'Indie Flower', cursive;
+  font-size: 29px;
+  margin-bottom: 9px;
+}
+
+.header-create-question-4 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #244FB3;
+  font-family: 'Indie Flower', cursive;
+  font-size: 38px;
+  margin-bottom: 9px;
+}
+
+.question-4-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 12px;
+}
+
+.question-4-question {
+  margin-bottom: 12px;
+}
+
+.question-4-answers {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 12px;
+  margin-bottom: 19px;
+}
+
+.question-4-inputs-button {
+  width: auto;
+  background: #94FF98;
+  color: black;
+  padding: 16px 17px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+  -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
+  .submit:hover {
+    background: #3a518d;
+}
 
 /* ---- components ---- */
 

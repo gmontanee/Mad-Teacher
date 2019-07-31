@@ -1,11 +1,25 @@
-<h1>Questions 4</h1>
+<div class="main-create-question-4">
+  <div class="container-create-question-4">
+    <div class="headers-create-question-4">
+      <h2 class="title-create-question-4">Step 4</h2>
+      <h3 class="header-create-question-4">Created</h3>
+    </div>
+    <div class="question-4-content">
+      <div class="bring-question">
+        <p class="question-4-question">{{question}}</p>
+        <div class="question-4-answers">
+          {{#each answers}}
+            <p>{{solution}}</p>
+          {{/each}}
+        </div>
+      </div>
+      <div class="container-question-4-inputs">
+        <form action='/questions/create/4/{{_id}}' method="post" class="appointment-form-create-question-4">
+          <button class="question-4-inputs-button" type="submit">Confirm</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<p>{{question}}</p>
-{{#each answers}}
-  <p>{{solution}}</p>
-{{/each}}
-
-<form action='/questions/create/4/{{_id}}' method="post">
-  <button type="submit">Next</button>
-</form>
