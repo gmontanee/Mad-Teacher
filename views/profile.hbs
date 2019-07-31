@@ -2,15 +2,62 @@
 <form action="/profile" method="POST" enctype="multipart/form-data">
     <input type="file" name="photo">
     <img src="{{image}}" alt="{{title}}">
-    <p>{{currentUser.username}}</p>
-    <p>{{currentUser.name}}</p>
-    <p>{{currentUser.surname}}</p>
-    <p>{{currentUser.birthday}}</p>
-    <p>{{currentUser.numberOfAnswers}}</p>
-    <p>{{currentUser.correctAnswers}}</p>
-    <p>{{currentUser.wrongAnswers}}</p>
-    <p>{{currentUser.puntuation}}</p>
-    {{#each currentUser.answers}}
-    <p>{{this}}</p>
-    {{/each}}
+    <p>Username: {{currentUser.username}}</p>
+    <p>Name: {{currentUser.name}}</p>
+    <p>Surname: {{currentUser.surname}}</p>
+    <p>Birthday: {{currentUser.birthday}}</p>
+    <p>Question answered: {{currentUser.numberOfAnswers}}</p>
+    <p>Correct answers: {{currentUser.correctAnswers}}</p>
+    <p>Wrong answers: {{currentUser.wrongAnswers}}</p>
+    <p>Puntuation: {{currentUser.puntuation}}</p>
 </form>
+
+{{#unless currentUser.teacher}}
+    {{#each currentUser.questionsMade}}
+        <div>
+            <h3>{{question}}</h3>
+            {{#each parameters}}
+                <p>Max: {{max}}</p>
+                <p>Min: {{min}}</p>
+                <p>Precission: {{precission}}</p>
+            {{/each}}
+            {{#each function}}
+                <p>Funtion: {{this}}</p>
+            {{/each}}
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+    {{/each}}
+{{/unless}}
+
+{{#each currentUser.answers}}
+    <div>
+        <p>{{question}}</p>
+        <ul>
+            {{#each answers}}
+                <div>
+                <li>
+                    {{#if correct}}
+                        {{#if answered}}
+                            <p>Correct and answered</p>
+                            <h2>{{solution}}</h2>
+                        {{/if}}
+                        {{#unless answered}}
+                            <p>Correct</p>
+                            <h3>{{solution}}</h3>
+                        {{/unless}}
+                    {{/if}}
+                    {{#unless correct}}
+                        {{#if answered}}
+                            <p>Answered</p>
+                            <h4>{{solution}}</h4>
+                        {{/if}}
+                        {{#unless answered}}
+                            <p>{{solution}}</p>
+                        {{/unless}}
+                    {{/unless}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+{{/each}}
