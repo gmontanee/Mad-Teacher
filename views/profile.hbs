@@ -1,12 +1,16 @@
 <h1>Profile</h1>
-<p>{{currentUser.username}}</p>
-<p>{{currentUser.name}}</p>
-<p>{{currentUser.surname}}</p>
-<p>{{currentUser.birthday}}</p>
-<p>{{currentUser.numberOfAnswers}}</p>
-<p>{{currentUser.correctAnswers}}</p>
-<p>{{currentUser.wrongAnswers}}</p>
-<p>{{currentUser.puntuation}}</p>
-{{#each currentUser.answers}}
-<p>{{this}}</p>
-{{/each}}
+<form action="/profile" method="POST" enctype="multipart/form-data">
+    <input type="file" name="photo">
+    <img src="{{image}}" alt="{{title}}">
+    <p>{{currentUser.username}}</p>
+    <p>{{currentUser.name}}</p>
+    <p>{{currentUser.surname}}</p>
+    <p>{{currentUser.birthday}}</p>
+    <p>{{currentUser.numberOfAnswers}}</p>
+    <p>{{currentUser.correctAnswers}}</p>
+    <p>{{currentUser.wrongAnswers}}</p>
+    <p>{{currentUser.puntuation}}</p>
+    {{#each currentUser.answers}}
+    <p>{{this}}</p>
+    {{/each}}
+</form>

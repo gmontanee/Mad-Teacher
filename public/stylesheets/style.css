@@ -194,8 +194,8 @@ display-flex {
   font-weight: bold;
   color: #FF4100;
   font-family: 'Indie Flower', cursive;
-  font-size: 146px;
-  margin-bottom: 30px;
+  font-size: 59px;
+  margin-bottom: -24px;
 }
 
 .sub-header-login {
@@ -205,7 +205,7 @@ display-flex {
   font-weight: bold;
   color: #271DEB;
   font-family: Arial;
-  font-size: 66px;
+  font-size: 28px;
   margin-bottom: 30px;
 }
 
@@ -225,7 +225,7 @@ display-flex {
   margin-bottom: 31px;
   font-family: 'Roboto Slab';
   outline: none;
-  font-size: 45px;
+  font-size: 26px;
 }
 
 .button-login {
@@ -233,7 +233,7 @@ display-flex {
   background: #4966b1;
   color: #fff;
   padding: 16px 17px;
-  font-size: 35px;
+  font-size: 24px;
   border: none;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -263,7 +263,7 @@ display-flex {
   background: #FFCA4D;
   color: #fff;
   padding: 16px 17px;
-  font-size: 35px;
+  font-size: 24px;
   border: none;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -638,6 +638,10 @@ body {
 }
 
 /* --- questions create 3 --- */
+
+
+
+
 /* --- questions create 4 --- */
 
 
