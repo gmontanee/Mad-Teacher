@@ -749,8 +749,59 @@ body {
   justify-content: space-between;
 }
 
-.container-question-3-inputs{
+.headers-create-question-3 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 12px;
+}
 
+.title-create-question-3 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #1540F0;
+  font-family: 'Indie Flower', cursive;
+  font-size: 29px;
+  margin-bottom: 9px;
+}
+
+.header-create-question-3 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #244FB3;
+  font-family: 'Indie Flower', cursive;
+  font-size: 38px;
+  margin-bottom: 9px;
+}
+
+/* .container-question-3-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+} */
+
+.appointment-form-create-question-3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.question-3-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .input-question-3-right {
