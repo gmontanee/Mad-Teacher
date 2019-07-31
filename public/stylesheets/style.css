@@ -292,40 +292,83 @@ display-flex {
   margin: 0;
   padding: 0;
   font-weight: bold;
-  color: #222;
-  font-family: 'Geostar', cursive;
-  font-size: 66px;
-  margin-bottom: 30px;
+  color: #FF4100;
+  font-family: 'Indie Flower', cursive;
+  font-size: 41px;
+  margin-bottom: -24px;
 }
 
 .main-home {
-  padding: 60px 0;
+  padding: 10px 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.sub-header-home {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 18px;
 }
 
 .user-home {
-
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #5900FF;
+  font-family: 'Indie Flower', cursive;
+  font-size: 59px;
+  margin-bottom: -24px;
 }
+
+.user-home-name{
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #5900FF;
+  font-family: 'Indie Flower', cursive;
+  font-size: 59px;
+  margin-bottom: -24px; 
+}
+
 
 .container-home {
   width: calc( 100% - 30px);
   max-width: 100%;
-  background: #fff;
+  background:rgba(255,255,255,0);
+
+
 }
 
 .button-add-question-home {
-  display: inline-block;
-  padding: 0.3em 1.2em;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 2em;
-  box-sizing: border-box;
+  background-color:#BDFFC9;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:2px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size:28px;
+	padding:16px 37px;
+	text-decoration: none;
+  text-shadow:0px 2px 1px #2f6627;
+  margin-left: 31px;
+
+}
+
+.text-button-add-question-home {
   text-decoration: none;
-  font-family: 'Roboto',sans-serif;
-  font-weight:300;
-  color: #FFFFFF;
-  background-color: #4eb5f1;
-  text-align: center;
-  transition: all 0.2s;
 }
 
 
@@ -347,7 +390,7 @@ body {
   font-weight: 400;
   font-family: 'Roboto Slab';
   margin: 0px;
-  display: flex;
+  display: flow-root;
   justify-content: center;
   align-items: center;
   height: 100vh;

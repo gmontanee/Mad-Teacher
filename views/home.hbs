@@ -1,15 +1,15 @@
 
-
 <div class="main-home">
-<h1 class="main-header-home">Home</h1>
-  <p class="user-home">{{currentUser.username}}</p>
-  {{#unless currentUser.teacher}}
-    <p class="user-home">Teacher</p>
-  {{/unless}}
-
+  <h1 class="main-header-home">Home</h1>
+  <div class="sub-header-home">
+    {{#unless currentUser.teacher}}
+      <p class="user-home">Teacher</p>
+    {{/unless}}
+    <p class="user-home-name">{{currentUser.username}}</p>
+  </div>
   <div class="container-home">
     {{#unless currentUser.teacher}}
-      <button class="button-add-question-home"><a href="/questions/create">Add questions</a></button>
+      <button class="button-add-question-home"><a class="text-button-add-question-home" href="/questions/create">Add question</a></button>
     {{/unless}}
 
 
