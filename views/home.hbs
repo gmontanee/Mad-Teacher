@@ -14,21 +14,24 @@
     {{/if}}
     </div>
     <div class="home-content">
-      <h3 class="title-home-questions">Questions</h3>
+      <h3 class="hitorical">Questions Right Answered</h3>
       <div class="home-questions-answers">
         {{#each this}}
+        <div class="home-questions-answers-questions">
           {{#if answerCorrect}}
-            <p class="home-answers">{{question}}</p>
-            {{#each answers}}
-                {{#if correct}}
-                <h3>{{solution}}</h3>
-                {{/if}}
-                {{#unless correct}}
-                <p
-                >{{solution}}</p>
-                {{/unless}}
-            {{/each}}
+            <p class="profile-questions-content-bring-question">{{question}}</p>
+            <div class="profile-questions-content-bring-question-input">
+              {{#each answers}}
+                  {{#if correct}}
+                  <h3 class="value-answered-and-right">{{solution}}</h3>
+                  {{/if}}
+                  {{#unless correct}}
+                  <p >{{solution}}</p>
+                  {{/unless}}
+              {{/each}}
+            </div>
           {{/if}}
+        </div>
           {{#unless answerCorrect}}
             <div class="home-questions-answers-display">
               <div>
