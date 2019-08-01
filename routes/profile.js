@@ -9,6 +9,7 @@ router.get('/', isNotLoggedIn, async (req, res, next) => {
   const user = req.session.currentUser;
   User.findById(user._id).populate('questionsMade')
     .then((userData) => {
+      req.session.currentUser = userData;
       res.render('profile', { userData });
     }).catch(err => {
       console.log(err);
