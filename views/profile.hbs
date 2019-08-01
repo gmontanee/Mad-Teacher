@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Profile</h1>
 <form action="/profile" method="POST" enctype="multipart/form-data">
     <input type="file" name="photo">
@@ -29,35 +30,101 @@
         </div>
     {{/each}}
 {{/if}}
+=======
+<div class="main-create-question-3">
+    <div class="container-create-question-3">
+        <div class="headers-create-question-3">
+            <h2 class="title-create-question-3">Your Profile</h2>
+        </div>
+        <div class="container-question-3-inputs">
+            <form action="/profile" method="POST" enctype="multipart/form-data" class="appointment-form-create-question-3">
+                <div class="profile-info">
+                    <div class="profile-data-container">
+                        <span>
+                            <p>Username: {{currentUser.username}}</p>
+                            <br>
+                            <p>Name: {{currentUser.name}}</p>
+                            <br>
+                            <p>Surname: {{currentUser.surname}}</p>
+                            <br>
+                            <p>Birthday: {{currentUser.birthday}}</p>
+                        </span>
+                    </div>
+                    <div class="profile-picture-container">
+                        <input type="file" name="photo">
+                        <img src="{{image}}" alt="{{title}}">
+                    </div>
+                </div>
+                <ul class="profile-stadistics-list">
+                    <li class="profile-stadistics-list-element"><span class="profile-stadistics-list-element-input">{{currentUser.numberOfAnswers}}</span>Question answered 
+                    </li>
+                    <li class="profile-stadistics-list-element"><span class="profile-stadistics-list-element-input">{{currentUser.correctAnswers}}</span>Correct answers
+                    </li>
+                    <li class="profile-stadistics-list-element"><span class="profile-stadistics-list-element-input">{{currentUser.wrongAnswers}}</span>Wrong answers
+                    </li>
+                    <li class="profile-stadistics-list-element"><span class="profile-stadistics-list-element-input">{{currentUser.puntuation}}</span>Puntuation 
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="question-4-content">
+            {{#unless currentUser.teacher}}
+                {{#each currentUser.questionsMade}}
+                    <div class="profile-questions-content">
+                        <div>
+                            <h3>{{question}}</h3>
+                            {{#each parameters}}
+                                <p>Max: {{max}}</p>
+                                <p>Min: {{min}}</p>
+                                <p>Precission: {{precission}}</p>
+                            {{/each}}
+                        </div>
+                        <div>
+                            {{#each function}}
+                                <p>Funtion: {{this}}</p>
+                            {{/each}}
+                        </div>
+                        <div class="profile-questions-content-buttons">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </div>
+                    </div>
+                {{/each}}
+            {{/unless}}
+>>>>>>> a387b8b5813ef0faf97cda5fd133e80967833119
 
-{{#each currentUser.answers}}
-    <div>
-        <p>{{question}}</p>
-        <ul>
-            {{#each answers}}
-                <div>
-                <li>
-                    {{#if correct}}
-                        {{#if answered}}
-                            <p>Correct and answered</p>
-                            <h2>{{solution}}</h2>
-                        {{/if}}
-                        {{#unless answered}}
-                            <p>Correct</p>
-                            <h3>{{solution}}</h3>
-                        {{/unless}}
-                    {{/if}}
-                    {{#unless correct}}
-                        {{#if answered}}
-                            <p>Answered</p>
-                            <h4>{{solution}}</h4>
-                        {{/if}}
-                        {{#unless answered}}
-                            <p>{{solution}}</p>
-                        {{/unless}}
-                    {{/unless}}
-                </li>
+            {{#each currentUser.answers}}
+                <div class="">
+                    <p class="question-4-question">{{question}}</p>
+                    <ul>
+                        {{#each answers}}
+                            <div>
+                            <li>
+                                {{#if correct}}
+                                    {{#if answered}}
+                                        <p>Correct and answered</p>
+                                        <h2>{{solution}}</h2>
+                                    {{/if}}
+                                    {{#unless answered}}
+                                        <p>Correct</p>
+                                        <h3>{{solution}}</h3>
+                                    {{/unless}}
+                                {{/if}}
+                                {{#unless correct}}
+                                    {{#if answered}}
+                                        <p>Answered</p>
+                                        <h4>{{solution}}</h4>
+                                    {{/if}}
+                                    {{#unless answered}}
+                                        <p>{{solution}}</p>
+                                    {{/unless}}
+                                {{/unless}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
             {{/each}}
-        </ul>
+        </div>
     </div>
-{{/each}}
+</div>
+
