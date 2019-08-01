@@ -293,6 +293,45 @@ display-flex {
 
 /* --- profile --- */
 
+.profile-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.profile-picture-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.profile-data-container {
+
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+
+  /* overflow: hidden;
+  padding: 0px 16px 21px;
+  text-overflow: ellipsis;
+  display: block;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: relative; */
+}
 
 .profile-stadistics-list {
   justify-content: space-around;
@@ -319,6 +358,14 @@ display-flex {
   color: black;
   font-weight: 600;
   text-align: center;
+}
+
+.profile-questions-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* --- home --- */

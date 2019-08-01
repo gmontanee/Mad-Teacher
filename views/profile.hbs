@@ -5,16 +5,22 @@
         </div>
         <div class="container-question-3-inputs">
             <form action="/profile" method="POST" enctype="multipart/form-data" class="appointment-form-create-question-3">
-                <div class="profile-picture-container">
-                    <canvas></canvas>
-                    <input type="file" name="photo">
-                    <img src="{{image}}" alt="{{title}}">
-                </div>
-                <div class="profile-data-container">
-                    <p>Username: {{currentUser.username}}</p>
-                    <p>Name: {{currentUser.name}}</p>
-                    <p>Surname: {{currentUser.surname}}</p>
-                    <p>Birthday: {{currentUser.birthday}}</p>
+                <div class="profile-info">
+                    <div class="profile-data-container">
+                        <span>
+                            <p>Username: {{currentUser.username}}</p>
+                            <br>
+                            <p>Name: {{currentUser.name}}</p>
+                            <br>
+                            <p>Surname: {{currentUser.surname}}</p>
+                            <br>
+                            <p>Birthday: {{currentUser.birthday}}</p>
+                        </span>
+                    </div>
+                    <div class="profile-picture-container">
+                        <input type="file" name="photo">
+                        <img src="{{image}}" alt="{{title}}">
+                    </div>
                 </div>
                 <ul class="profile-stadistics-list">
                     <li class="profile-stadistics-list-element"><span class="profile-stadistics-list-element-input">{{currentUser.numberOfAnswers}}</span>Question answered 
@@ -32,15 +38,19 @@
             {{#unless currentUser.teacher}}
                 {{#each currentUser.questionsMade}}
                     <div class="profile-questions-content">
-                        <h3>{{question}}</h3>
-                        {{#each parameters}}
-                            <p>Max: {{max}}</p>
-                            <p>Min: {{min}}</p>
-                            <p>Precission: {{precission}}</p>
-                        {{/each}}
-                        {{#each function}}
-                            <p>Funtion: {{this}}</p>
-                        {{/each}}
+                        <div>
+                            <h3>{{question}}</h3>
+                            {{#each parameters}}
+                                <p>Max: {{max}}</p>
+                                <p>Min: {{min}}</p>
+                                <p>Precission: {{precission}}</p>
+                            {{/each}}
+                        </div>
+                        <div>
+                            {{#each function}}
+                                <p>Funtion: {{this}}</p>
+                            {{/each}}
+                        </div>
                         <div class="profile-questions-content-buttons">
                             <button>Edit</button>
                             <button>Delete</button>
