@@ -34,35 +34,40 @@
                 </ul>
             </form>
         </div>
-        <div class="question-4-content">
+        <div class="profile-questions-created">
             {{#unless currentUser.teacher}}
                 {{#each currentUser.questionsMade}}
+                    <h3 class="profile-questions-created-question">{{question}}</h3>
                     <div class="profile-questions-content">
-                        <div>
-                            <h3>{{question}}</h3>
+                        <div class="profile-questions-content-parameters">
                             {{#each parameters}}
+                            <div class="profile-questions-content-parameters-elements">
                                 <p>Max: {{max}}</p>
                                 <p>Min: {{min}}</p>
                                 <p>Precission: {{precission}}</p>
+                            </div>
                             {{/each}}
                         </div>
-                        <div>
+                        <div class="profile-questions-content-functions">
                             {{#each function}}
-                                <p>Funtion: {{this}}</p>
+                            <div class="profile-questions-content-functions-elements">
+                                <p>Function</p>
+                                <p>{{this}}</p>
+                            </div>
                             {{/each}}
                         </div>
                         <div class="profile-questions-content-buttons">
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <button class="profile-questions-content-buttons-Edit">Edit</button>
+                            <button class="profile-questions-content-buttons-Delete">Delete</button>
                         </div>
                     </div>
                 {{/each}}
             {{/unless}}
 
             {{#each currentUser.answers}}
-                <div class="">
-                    <p class="question-4-question">{{question}}</p>
-                    <ul>
+                <div class="profile-questions-content">
+                    <p >{{question}}</p>
+                    <ul >
                         {{#each answers}}
                             <div>
                             <li>
