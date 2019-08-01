@@ -34,21 +34,21 @@
         </div>
           {{#unless answerCorrect}}
             <div class="home-questions-answers-display">
-              <div>
-                <form action="/home/{{_id}}" method="POST">
-                  <p class="home-questions-answers-display-input">{{question}}</p>
+              <div class="home-questions-answers-display-container">
+                <form action="/home/{{_id}}" method="POST"  class="home-questions-answers-display-container-both">
                   <div>
+                  <p class="home-questions-answers-display-input">{{question}}</p>
                     {{#each answers}}
                       <label class="home-questions-answers-solution" for="{{solution}}">{{solution}}</label>
                       <input class="home-questions-answers-solution-input" type="radio" id="{{solution}}" name="solution" value='{{solution}}'>
                     {{/each}}
                   </div>
-                  </div>
                   <div>
                     <button class="check-button" type="submit">Check</button>
                   </div>
                 </form>
-                </div>
+              </div>
+            </div>
           {{/unless}}
         {{/each}}
       </div>
