@@ -6,7 +6,7 @@ function main () {
 
   burger.addEventListener('click', (e) => {
     console.log(e);
-    navbar.classList.toggle('visible');
+    navbar.classList.toggle('navbar-visible');
   });
 }
 
