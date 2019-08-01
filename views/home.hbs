@@ -6,13 +6,13 @@
       <p class="user-home">Teacher</p>
     {{/if}}
     <p class="user-home-name">{{currentUser.username}}</p>
-  </div>
-  <div class="container-home">
-    <div>
-    {{#if currentUser.teacher}}
-      <button class="button-add-question-home"><a class="text-button-add-question-home" href="/questions/create">Add question</a></button>
-    {{/if}}
     </div>
+      <div class="container-home">
+        <div>
+          {{#if currentUser.teacher}}
+            <button class="button-add-question-home"><a class="text-button-add-question-home" href="/questions/create">Add question</a></button>
+          {{/if}}
+        </div>
     <div class="home-content">
       <h3 class="hitorical">Questions Right Answered</h3>
       <div class="home-questions-answers">
@@ -21,6 +21,7 @@
           {{#if answerCorrect}}
             <p class="profile-questions-content-bring-question">{{question}}</p>
             <div class="profile-questions-content-bring-question-input">
+
               {{#each answers}}
                   {{#if correct}}
                   <h3 class="value-answered-and-right">{{solution}}</h3>
@@ -29,27 +30,35 @@
                   <p >{{solution}}</p>
                   {{/unless}}
               {{/each}}
+
             </div>
           {{/if}}
         </div>
-          {{#unless answerCorrect}}
+          {{#if toAnswer}}
             <div class="home-questions-answers-display">
               <div>
                 <form action="/home/{{_id}}" method="POST">
                   <p class="home-questions-answers-display-input">{{question}}</p>
                   <div>
+              
                     {{#each answers}}
                       <label class="home-questions-answers-solution" for="{{solution}}">{{solution}}</label>
                       <input class="home-questions-answers-solution-input" type="radio" id="{{solution}}" name="solution" value='{{solution}}'>
                     {{/each}}
+
                   </div>
-                  </div>
-                  <div>
-                    <button class="check-button" type="submit">Check</button>
-                  </div>
+                        {{#unless correct}}
+                    <button class="check-button {{answerCorrect}}" type="submit">Check</button>
+                          {{/unless}}
                 </form>
+              </div>
+                  <div>
+                    
+                
+                  </div>
                 </div>
-          {{/unless}}
+          {{/if}}
+
         {{/each}}
       </div>
     </div>

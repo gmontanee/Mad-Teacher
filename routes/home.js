@@ -70,6 +70,7 @@ router.get('/', isNotLoggedIn, (req, res, next) => {
           const user = req.session.currentUser;
           user.generatedQuestions = arrOfQuestions;
           req.session.currentUser = user;
+          console.log(arrOfQuestions);
           res.render('home', arrOfQuestions);
         }).catch(err => {
           console.log(err);
@@ -88,6 +89,7 @@ router.post('/:id', isNotLoggedIn, async (req, res, next) => {
     req.session.currentUser.numberOfAnswers++;
     req.session.currentUser.correctAnswers++;
     req.session.currentUser.puntuation += 100;
+    question.toAnswer = false;
   } else {
     question.answerCorrect = false;
     req.session.currentUser.numberOfAnswers++;

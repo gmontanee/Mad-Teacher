@@ -68,7 +68,7 @@ const arrayOfAnswers = (newQuestion, id) => {
     question,
     answers,
     _id: newQuestion._id,
-    answer: false,
+    toAnswer: true,
     answerCorrect: false
   };
 

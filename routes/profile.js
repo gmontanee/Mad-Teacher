@@ -7,13 +7,12 @@ const User = require('../models/User');
 /* GET users listing. */
 router.get('/', isNotLoggedIn, async (req, res, next) => {
   const user = req.session.currentUser;
-  User.findById(user._id)
+  User.findById(user._id).populate('questionsMade')
     .then((userData) => {
-      req.session.currentUser = userData;
+      res.render('profile', { userData });
     }).catch(err => {
       console.log(err);
     });
-  res.render('profile');
 });
 
 router.post('/', isNotLoggedIn, parser.single('photo'), async (req, res, next) => {
