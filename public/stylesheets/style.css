@@ -291,6 +291,35 @@ display-flex {
   text-decoration: none;
 }
 
+/* --- profile --- */
+
+
+.profile-stadistics-list {
+  justify-content: space-around;
+  border-top: 1px solid #efefef;
+  padding: 12px 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  list-style: none;
+}
+
+.profile-stadistics-list-element {
+  font-size: 14px;
+  text-align: center;
+  width: 25%;
+  font: inherit;
+  vertical-align: baseline;
+  display: list-item;
+}
+
+.profile-stadistics-list-element-input {
+  display: block;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+}
 
 /* --- home --- */
 
