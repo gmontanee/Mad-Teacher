@@ -2,43 +2,43 @@
 <div class="main-home">
   <h1 class="main-header-home">Home</h1>
   <div class="sub-header-home">
-    {{#unless currentUser.teacher}}
+    {{#if currentUser.teacher}}
       <p class="user-home">Teacher</p>
-    {{/unless}}
+    {{/if}}
     <p class="user-home-name">{{currentUser.username}}</p>
   </div>
   <div class="container-home">
-    {{#unless currentUser.teacher}}
+    {{#if currentUser.teacher}}
       <button class="button-add-question-home"><a class="text-button-add-question-home" href="/questions/create">Add question</a></button>
-    {{/unless}}
+    {{/if}}
 
 
     {{#each this}}
-    {{#if answer}}
-      <p>{{question}}</p>
-      {{#each answers}}
+      {{#if answerCorrect}}
+        <p>{{question}}</p>
+        {{#each answers}}
           {{#if correct}}
-          <h3>{{solution}}</h3>
+            <h3>{{solution}}</h3>
           {{/if}}
           {{#unless correct}}
-          <p>{{solution}}</p>
+            <p>{{solution}}</p>
           {{/unless}}
-      {{/each}}
-    {{/if}}
-    {{#unless answer}}
-    <form action="/home/{{_id}}" method="POST">
-      <p>{{question}}</p>
-      <div>
-        {{#each answers}}
-          <label for="{{solution}}">{{solution}}</label>
-          <input type="radio" id="{{solution}}" name="solution" value='{{solution}}'>
         {{/each}}
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-    {{/unless}}
-  {{/each}}
+      {{/if}}
+      {{#unless answerCorrect}}
+        <form action="/home/{{_id}}" method="POST">
+          <p>{{question}}</p>
+          <div>
+            {{#each answers}}
+              <label for="{{solution}}">{{solution}}</label>
+              <input type="radio" id="{{solution}}" name="solution" value='{{solution}}'>
+            {{/each}}
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+          </form>
+      {{/unless}}
+    {{/each}}
   </div>
 </div>
