@@ -70,7 +70,9 @@ const arrayOfAnswers = (newQuestion, id) => {
     question,
     answers,
     _id: newQuestion._id,
-    answer: false
+    timesWrong: 0,
+    answer: false,
+    answerCorrect: false
   };
 
   let currentIndex = questionObject.answers.length;

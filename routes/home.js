@@ -15,7 +15,6 @@ router.get('/beTeacher-11-99', isNotLoggedIn, (req, res, next) => {
 
 router.post('/beTeacher-11-99', isNotLoggedIn, async (req, res, next) => {
   req.session.currentUser.teacher = true;
-  console.log(req.session.currentUser);
   const userId = req.session.currentUser._id;
   await User.findByIdAndUpdate(userId, req.session.currentUser);
   res.redirect('/home');
@@ -44,6 +43,7 @@ router.get('/', isNotLoggedIn, (req, res, next) => {
           const user = req.session.currentUser;
           user.generatedQuestions = arrOfQuestions;
           req.session.currentUser = user;
+          console.log(arrOfQuestions.length);
           res.render('home', arrOfQuestions);
         }).catch(err => {
           console.log(err);
