@@ -34,8 +34,8 @@ const arrayOfAnswers = (newQuestion, id) => {
   const arrayOfValues = [];
   for (let i = 0; i < newQuestion.parameters.length; i++) {
     arrayOfPositions.push(newQuestion.parameters[i].position);
-    console.log(newQuestion);
-    console.log(typeof newQuestion.parameters[i], newQuestion.parameters[i]);
+    // console.log(newQuestion);
+    // console.log(typeof newQuestion.parameters[i], newQuestion.parameters[i]);
     arrayOfValues.push(randomNumber(newQuestion.parameters[i].max, newQuestion.parameters[i].min, newQuestion.parameters[i].precission));
   }
   question = replaceVar(question, arrayOfPositions, arrayOfValues);
