@@ -5,16 +5,15 @@ const parser = require('../config/cloudinary');
 const User = require('../models/User');
 
 /* GET users listing. */
-router.get('/', isNotLoggedIn, (req, res, next) => {
+router.get('/', isNotLoggedIn, async (req, res, next) => {
   const user = req.session.currentUser;
-  User.findById(user._id).populate('questionsMade')
+  User.findById(user._id)
     .then((userData) => {
       req.session.currentUser = userData;
     }).catch(err => {
       console.log(err);
     });
   res.render('profile');
-  console.log(req.session.currentUser.questionsMade[0].parameters);
 });
 
 router.post('/', isNotLoggedIn, parser.single('photo'), async (req, res, next) => {

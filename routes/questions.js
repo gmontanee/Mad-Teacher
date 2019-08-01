@@ -60,7 +60,6 @@ router.get('/create/4/:id', isNotLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   const newQuestion = await Question.findById(id);
   const questionObject = arrayOfAnswers(newQuestion);
-  console.log(questionObject);
   res.render('questions-create-4', questionObject);
 });
 

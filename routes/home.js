@@ -20,6 +20,33 @@ router.post('/beTeacher-11-99', isNotLoggedIn, async (req, res, next) => {
   res.redirect('/home');
 });
 
+router.get('/delete/:id', isNotLoggedIn, async (req, res, next) => {
+  const { id } = req.params;
+  const users = await User.find();
+  users.forEach(async (user) => {
+    const newAnswers = [];
+    user.answers.filter(async (question) => {
+      if (question._id == id) {
+        if (question.answerCorrect) {
+          user.correctAnswers--;
+          user.puntuation -= 100;
+        } else {
+          user.wrongAnswers--;
+        }
+        user.numberOfAnswers--;
+        return false;
+      } else {
+        newAnswers.push(question);
+        return true;
+      }
+    });
+    user.answers = newAnswers;
+    await User.findByIdAndUpdate(user._id, user);
+  });
+  await Question.findByIdAndRemove(id);
+  res.redirect('/profile');
+});
+
 router.get('/', isNotLoggedIn, (req, res, next) => {
   const user = req.session.currentUser;
   User.findById(user._id).populate('questionsMade')
@@ -43,7 +70,6 @@ router.get('/', isNotLoggedIn, (req, res, next) => {
           const user = req.session.currentUser;
           user.generatedQuestions = arrOfQuestions;
           req.session.currentUser = user;
-          console.log(arrOfQuestions.length);
           res.render('home', arrOfQuestions);
         }).catch(err => {
           console.log(err);

@@ -35,7 +35,7 @@
             </form>
         </div>
         <div class="profile-questions-created">
-            {{#unless currentUser.teacher}}
+            {{#if currentUser.teacher}}
                 {{#each currentUser.questionsMade}}
                     <h3 class="profile-questions-created-question">{{question}}</h3>
                     <div class="profile-questions-content">
@@ -57,12 +57,12 @@
                             {{/each}}
                         </div>
                         <div class="profile-questions-content-buttons">
-                            <button class="profile-questions-content-buttons-Edit">Edit</button>
-                            <button class="profile-questions-content-buttons-Delete">Delete</button>
+                            <button  class="profile-questions-content-buttons-Edit">Edit</button>
+                            <button class="profile-questions-content-buttons-Delete"><a href="/home/delete/{{_id}}">Delete</a></button>
                         </div>
                     </div>
                 {{/each}}
-            {{/unless}}
+            {{/if}}
 
             {{#each currentUser.answers}}
                 <div class="profile-questions-content-bring">
