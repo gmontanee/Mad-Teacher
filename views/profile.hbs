@@ -17,10 +17,10 @@
                             <p>Birthday: {{currentUser.birthday}}</p>
                         </span>
                     </div>
-                    <div class="profile-picture-container">
+                    {{!-- <div class="profile-picture-container">
                         <input type="file" name="photo">
                         <img src="{{image}}" alt="{{title}}">
-                    </div>
+                    </div> --}}
                 </div>
                 <ul class="profile-stadistics-list">
                     <li class="profile-stadistics-list-element"><span class="profile-stadistics-list-element-input">{{currentUser.numberOfAnswers}}</span>Question answered 
@@ -62,39 +62,51 @@
                         </div>
                     </div>
                 {{/each}}
-            {{/if}}
-
-            {{#each currentUser.answers}}
-                <div class="profile-questions-content-bring">
-                    <h3 >{{question}}</h3>
-                    <ul >
-                        {{#each answers}}
-                            <div>
-                            <li>
-                                {{#if correct}}
-                                    {{#if answered}}
-                                        <p>Correct and answered</p>
-                                        <h2>{{solution}}</h2>
+            {{/unless}}
+            <div>
+                <h3 class="hitorical">Historical Questions Answered</h3>
+                {{#each currentUser.answers}}
+                    <div class="profile-questions-content-bring">
+                        <h3 class="profile-questions-content-bring-question">{{question}}</h3>
+                        <div class="hitorical-solution-top">
+                            <div class="hitorical-solution">
+                            {{#each answers}}
+                                <div class="container-answered-and-right">
+                                    {{#if correct}}
+                                            {{#if answered}}
+                                                <p class="title-answered-and-right">Right answered</p>
+                                                <h2 class="value-answered-and-right">{{solution}}</h2>
+                                            {{/if}}
+                                        
+                                        <div class="container-answered">
+                                            {{#unless answered}}
+                                                <p class="title-answered">Right answer</p>
+                                                <h2 class="value-answered">{{solution}}</h2>
+                                            {{/unless}}
+                                        </div>
                                     {{/if}}
-                                    {{#unless answered}}
-                                        <p>Correct</p>
-                                        <h3>{{solution}}</h3>
+                                </div>
+                                <div class="hitorical-solution-other">
+                                    {{#unless correct}}
+                                        <div class="container-other">
+                                            {{#if answered}}
+                                                <p class="title-other">Answered</p>
+                                                <h4 class="value-other">{{solution}}</h4>
+                                            {{/if}}
+                                        </div>
+                                        <div class="container-solution">
+                                            {{#unless answered}}
+                                                <p class="value-solution">{{solution}}</p>
+                                            {{/unless}}
+                                        </div>
                                     {{/unless}}
-                                {{/if}}
-                                {{#unless correct}}
-                                    {{#if answered}}
-                                        <p>Answered</p>
-                                        <h4>{{solution}}</h4>
-                                    {{/if}}
-                                    {{#unless answered}}
-                                        <p>{{solution}}</p>
-                                    {{/unless}}
-                                {{/unless}}
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
-            {{/each}}
+                                </div>
+                            {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>
